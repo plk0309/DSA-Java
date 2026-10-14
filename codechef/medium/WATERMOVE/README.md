@@ -63,7 +63,7 @@ At the end, the array is $[0, 5, 0, 5, 5]$, and the maximum is $5$.
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-14T15:09:02.715Z  
+**Submitted:** 2026-10-14T15:10:00.939Z  
 
 ```java
 import java.util.*;
@@ -74,7 +74,26 @@ class Codechef
 {
 	public static void main (String[] args) throws java.lang.Exception
 	{
-		// your code goes here
+		 Scanner sc = new Scanner(System.in);
+
+        int T = sc.nextInt();
+
+        while (T-- > 0) {
+            int N = sc.nextInt();
+            int K = sc.nextInt();
+
+            int[] A = new int[N];
+
+            for (int i = 0; i < N; i++) {
+                A[i] = sc.nextInt();
+            }
+
+            Arrays.sort(A);
+
+            int ans = Math.max(A[N - 1], A[0] + A[1]);
+
+            System.out.println(ans);
+        }
 
 	}
 }
