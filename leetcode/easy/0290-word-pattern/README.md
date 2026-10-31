@@ -53,43 +53,31 @@ The bijection can be established as:
 ## Solution
 
 **Language:** Java  
-**Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 42 MB (beats 98.78%)  
-**Submitted:** 2026-10-31T11:46:09.099Z  
+**Runtime:** 1 ms (beats 85.68%)  
+**Memory:** 42.2 MB (beats 91.67%)  
+**Submitted:** 2026-10-31T11:46:56.627Z  
 
 ```java
-
-import java.util.*;
-
 class Solution {
     public boolean wordPattern(String pattern, String s) {
-        String[] words = s.split(" ");
-
-        if (pattern.length() != words.length)
-            return false;
-
-        Map<Character, String> map = new HashMap<>();
-        Set<String> used = new HashSet<>();
-
-        for (int i = 0; i < pattern.length(); i++) {
-            char ch = pattern.charAt(i);
-            String word = words[i];
-
-            if (map.containsKey(ch)) {
-                if (!map.get(ch).equals(word))
-                    return false;
-            } else {
-                if (used.contains(word))
-                    return false;
-
-                map.put(ch, word);
-                used.add(word);
+        String[] words=s.split(" ");
+        if(pattern.length()!=words.length)
+        return false;
+        HashMap <Character,String>map=new HashMap<>();
+        for(int i=0;i<pattern.length();i++){
+            char ch=pattern.charAt(i);
+            String word=words[i];
+            if(map.containsKey(ch) && !map.get(ch).equals(word)){
+                return false;
             }
+            else if (!map.containsKey(ch) && map.containsValue(word))
+            return false;
+            else
+            map.put(ch,word);
         }
         return true;
     }
 }
-
 ```
 
 ---
