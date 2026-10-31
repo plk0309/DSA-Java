@@ -54,8 +54,8 @@ The bijection can be established as:
 
 **Language:** Java  
 **Runtime:** 1 ms (beats 85.68%)  
-**Memory:** 42.5 MB (beats 81.99%)  
-**Submitted:** 2026-10-31T11:42:24.796Z  
+**Memory:** 42.1 MB (beats 97.51%)  
+**Submitted:** 2026-10-31T11:45:47.204Z  
 
 ```java
 class Solution {
